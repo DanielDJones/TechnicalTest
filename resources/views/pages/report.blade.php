@@ -7,13 +7,12 @@
         @foreach($membershipsReport as $membership)
             <div class="card">
                 <h3>{{$membership->start_date}}</h3>
-            <p>Member ID: {{$membership->member_id}}</p>
+            <p><p><a class="btn btn-info" href="/members/{{$membership->member_id}}">View Member</a></p></p>
             </div>
         @endforeach
         <!-- Page cont -->
     @else
         <p>No new memberships this month</p>
-        
     @endif
 
 @endsection
