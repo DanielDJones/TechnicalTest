@@ -13,4 +13,10 @@ class members extends Model
     set timestamps
     public $timestamps = true;
     */
+
+
+    //sets the primay key to member_id
+    public $primaryKey  = 'member_id';
+
+
 }

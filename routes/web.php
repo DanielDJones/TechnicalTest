@@ -29,4 +29,5 @@ Route::get('/report/{year}/{month}', function($year, $month) {
 
 Route::get('/report/{year}/{month}', "PagesController@report/{year}/{month}");
 
+
 Route::resource("members", "MembersController");

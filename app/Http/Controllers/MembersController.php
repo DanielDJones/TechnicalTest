@@ -72,7 +72,7 @@ class MembersController extends Controller
      */
     public function show($id)
     {
-        $member = Members::find($id);
+        $member = Members::where("member_id", $id)->first();
         return view("members/show")->with("member", $member);
 
     }
@@ -85,7 +85,8 @@ class MembersController extends Controller
      */
     public function edit($id)
     {
-        //
+        $member = Members::where("member_id", $id)->first();
+        return view("members/edit")->with("member", $member);
     }
 
     /**
@@ -97,7 +98,30 @@ class MembersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //validation
+        $this->validate($request, [
+            "forename" => "required",
+            "surname" => "required",
+            "email" => "required|email",
+            //nullable is required to prevent errors see https://laravel.com/docs/5.7/validation#validation-quickstart
+            "dateofbirth" => "nullable|date",
+            "phonenumber" => "nullable"
+        ]);
+
+        //Create member
+
+        //Enter into fields
+        $member = $member = Members::where("member_id", $id)->first();
+        $member->forename = $request->input("forename");
+        $member->surname = $request->input("surname");
+        $member->email = $request->input("email");
+        $member->dateofbirth = $request->input("dateofbirth");
+        $member->telnumber = $request->input("telnumber");
+        
+        //Store member
+        $member->save();
+
+        return redirect("/members")->with("success", "Member Updated");
     }
 
     /**
@@ -108,6 +132,8 @@ class MembersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $member = $member = Members::where("member_id", $id)->first();
+        $member->delete();
+        return redirect("/members")->with("success", "Member Removed");
     }
 }

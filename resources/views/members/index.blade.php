@@ -6,7 +6,7 @@
         @foreach($members as $member)
             <div class="card">
                 <h3>{{$member->surname}}</h3>
-                <p><a href="/members/{{$member->id}}">View Member</a></p>
+                <p><a href="/members/{{$member->member_id}}">View Member</a></p>
             </div>
         @endforeach
         <!-- Page cont -->

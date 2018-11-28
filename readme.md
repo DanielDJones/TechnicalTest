@@ -6,15 +6,16 @@ Main backbone done a key critical faults have been resloved.
 -User details
 -members and membership tables
 -Fixed bug with Bootstrap intergration
+-Add validation of email 
+-implemented add member
 
 #Todo
 -Add relations
 -Add admin login
--implement add member
 -Finish reports 
--Make the website prettier
 -Monthly and annual subs
-
+-Make the website prettier
+-Edit member
 ##Todo (not technically required order of importance)
--Add validation of email and phone numbers
+and phone numbers
 -Add change password function
