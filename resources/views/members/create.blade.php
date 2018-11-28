@@ -16,12 +16,20 @@
             {{Form::text("email", "", ["class" => "form-control", "placeholder" => "JSmith@gmail.com"])}}
         </div>
         <div class="form-group">
+                {{Form::label("Subscription Type")}}
+                {{Form::select('sub_type', ['M' => 'Monthly', 'Y' => 'Yearly'], 'M')}}
+        </div>
+        <div class="form-group">
             {{Form::label("dateofbirth", "Date of Birth")}}
             {{Form::date("dateofbirth", "", ["class" => "form-control", "placeholder" => "Smith"])}}
         </div>
         <div class="form-group">
             {{Form::label("phonenumber", "Phone Number")}}
             {{Form::text("phonenumber", "", ["class" => "form-control", "placeholder" => "0121 000 0000"])}}
+        </div>
+        <div class="form-group">
+                {{Form::label("phonenumber", "Phone Number")}}
+                {{Form::text("phonenumber", "", ["class" => "form-control", "placeholder" => "0121 000 0000"])}}
         </div>
         {{Form::submit("Submit", ["class"=>"btn btn-primary"])}}
     {!! Form::close() !!}

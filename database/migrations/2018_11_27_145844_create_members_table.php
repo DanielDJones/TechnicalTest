@@ -18,6 +18,7 @@ class CreateMembersTable extends Migration
             $table->string("forename");
             $table->string("surname");
             $table->string("email")->unique();
+            $table->string("sub_type");
             $table->date("dateofbirth")->nullable();
             //Phone number stonred as string to allow for regional codes (+44)
             $table->string("telnumber")->nullable();

@@ -28,8 +28,8 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Reports</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown02">
-                        <a class="dropdown-item" href="#">This Month</a>
-                        <a class="dropdown-item" href="#">This Year</a>
+                        <a class="dropdown-item" href="/report/1/2018">This Month</a>
+                        <a class="dropdown-item" href="/report/1/2018">This Year</a>
                         <a class="dropdown-item" href="#">Search</a>
                     </div>
                 </li>

@@ -14,6 +14,12 @@ class MembersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index()
     {
         //get members by surname and break into pages
@@ -44,6 +50,7 @@ class MembersController extends Controller
             "forename" => "required",
             "surname" => "required",
             "email" => "required|email",
+            "sub_type" => "required",
             //nullable is required to prevent errors see https://laravel.com/docs/5.7/validation#validation-quickstart
             "dateofbirth" => "nullable|date",
             "phonenumber" => "nullable"
@@ -58,6 +65,7 @@ class MembersController extends Controller
         $member->email = $request->input("email");
         $member->dateofbirth = $request->input("dateofbirth");
         $member->telnumber = $request->input("telnumber");
+        $member->sub_type = $request->input("sub_type");
         
         //Store member
         $member->save();
@@ -108,6 +116,7 @@ class MembersController extends Controller
             "forename" => "required",
             "surname" => "required",
             "email" => "required|email",
+            "sub_type" => "required",
             //nullable is required to prevent errors see https://laravel.com/docs/5.7/validation#validation-quickstart
             "dateofbirth" => "nullable|date",
             "phonenumber" => "nullable"
@@ -122,7 +131,7 @@ class MembersController extends Controller
         $member->email = $request->input("email");
         $member->dateofbirth = $request->input("dateofbirth");
         $member->telnumber = $request->input("telnumber");
-        
+        $member->sub_type = $request->input("sub_type");
         //Store member
         $member->save();
 

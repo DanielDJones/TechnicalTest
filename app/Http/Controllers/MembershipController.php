@@ -8,6 +8,11 @@ use App\Membership;
 
 class MembershipController extends Controller
 {
+    //Only Logged in users can see this page
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *

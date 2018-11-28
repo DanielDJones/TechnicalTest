@@ -2,7 +2,7 @@
 
 @section("content")
     <h1>{{$member->forename}} {{$member->surname}}</h1>
-    <p>{{$member->email}} {{$member->dateofbirth }} {{$member->telnumber}}</p>
+    <p>{{$member->email}} {{$member->dateofbirth }} {{$member->telnumber}} Sub Type: {{$member->sub_type}}</p>
     <a class="btn btn-default" href="/members">Back</a>
     <a href="/members/{{$member->member_id}}/edit" class="btn btn-info">Edit</a>
     <a href="/membership/{{$member->member_id}}/create" class="btn btn-info">Add Membership</a>
@@ -11,6 +11,8 @@
                 {{Form::hidden('_method', 'DELETE')}}
                 {{Form::submit('Delete', ['class' => 'btn btn-danger float-right'])}}
     {!!Form::close()!!}
+
+    
     <!-- Display membership -->
     @if(count($memberships) > 0)
         @foreach($memberships as $membership)
