@@ -3,9 +3,9 @@
 @section("content")
     <h1>{{$member->forename}} {{$member->surname}}</h1>
     <p>{{$member->email}} {{$member->dateofbirth }} {{$member->telnumber}} Sub Type: {{$member->sub_type}}</p>
-    <a class="btn btn-default" href="/members">Back</a>
-    <a href="/members/{{$member->member_id}}/edit" class="btn btn-info">Edit</a>
-    <a href="/membership/{{$member->member_id}}/create" class="btn btn-info">Add Membership</a>
+    <a class="btn btn-secondary" href="/members">Back</a>
+    <a href="/members/{{$member->member_id}}/edit" class="btn btn-gym">Edit</a>
+    <a href="/membership/{{$member->member_id}}/create" class="btn btn-gym">Add Membership</a>
 
     {!!Form::open(["action" => ["MembersController@destroy", $member->member_id], 'method' => 'POST'])!!}
                 {{Form::hidden('_method', 'DELETE')}}

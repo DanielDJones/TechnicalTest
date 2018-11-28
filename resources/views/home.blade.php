@@ -30,8 +30,8 @@ function reportBuilder($month) {
                             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Report Month
                             </button>
-                            <a href="/members" class="btn btn-info">View/Edit Members</a>
-                            <a href="/members/create" class="btn btn-info">Add Members</a>
+                            <a href="/members" class="btn btn-gym">View/Edit Members</a>
+                            <a href="/members/create" class="btn btn-gym">Add Members</a>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <a class="dropdown-item" onclick="reportBuilder(1)">January</a>
                                 <a class="dropdown-item" onclick="reportBuilder(2)">February</a>

@@ -5,8 +5,8 @@
     @if(count($members) > 0)
         @foreach($members as $member)
             <div class="card">
-                <h3>{{$member->surname}}</h3>
-                <p><a href="/members/{{$member->member_id}}">View Member</a></p>
+                <h3>{{$member->forename}} {{$member->surname}}</h3>
+                <p><a class="btn btn-gym" href="/members/{{$member->member_id}}">View Member</a></p>
             </div>
         @endforeach
         <!-- Page cont -->

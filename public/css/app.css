@@ -10483,3 +10483,34 @@ body {
   margin: 10px;
 }
 
+.accent {
+  -webkit-clip-path: polygon(0 88%, 100% 43%, 100% 100%, 0% 100%);
+          clip-path: polygon(0 88%, 100% 43%, 100% 100%, 0% 100%);
+  background-color: #42a11d;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 10vh;
+  z-index: -1;
+}
+
+.btn-gym {
+  background-color: #42a11d;
+  color: #fff;
+}
+
+.btn-gym-dark {
+  background-color: #42a11d;
+  color: #fff;
+}
+
+.card {
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.main-img {
+  max-width: 80%;
+  margin: 0 auto;
+}
+

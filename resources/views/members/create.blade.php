@@ -27,11 +27,8 @@
             {{Form::label("phonenumber", "Phone Number")}}
             {{Form::text("phonenumber", "", ["class" => "form-control", "placeholder" => "0121 000 0000"])}}
         </div>
-        <div class="form-group">
-                {{Form::label("phonenumber", "Phone Number")}}
-                {{Form::text("phonenumber", "", ["class" => "form-control", "placeholder" => "0121 000 0000"])}}
-        </div>
-        {{Form::submit("Submit", ["class"=>"btn btn-primary"])}}
+        
+        {{Form::submit("Submit", ["class"=>"btn btn-gym"])}}
     {!! Form::close() !!}
 
 @endsection

@@ -16,6 +16,10 @@
             {{Form::text("email", $member->email, ["class" => "form-control", "placeholder" => "JSmith@gmail.com"])}}
         </div>
         <div class="form-group">
+                {{Form::label("Subscription Type")}}
+                {{Form::select('sub_type', ['M' => 'Monthly', 'Y' => 'Yearly'], 'M')}}
+        </div>
+        <div class="form-group">
             {{Form::label("dateofbirth", "Date of Birth")}}
             {{Form::date("dateofbirth", $member->dateofbirth, ["class" => "form-control", "placeholder" => "Smith"])}}
         </div>
@@ -25,7 +29,7 @@
         </div>
         <!-- Spoof put request to allow for the update -->
         {{Form::hidden("_method", "PUT")}}
-        {{Form::submit("Submit", ["class"=>"btn btn-primary"])}}
+        {{Form::submit("Submit", ["class"=>"btn btn-gym"])}}
     {!! Form::close() !!}
 
 @endsection

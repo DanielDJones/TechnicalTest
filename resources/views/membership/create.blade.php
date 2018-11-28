@@ -16,7 +16,7 @@
                 {{Form::label("dend_date", "End Date")}}
                 {{Form::date("end_date", "", ["class" => "form-control"])}}
         </div>
-        {{Form::submit("Submit", ["class"=>"btn btn-primary"])}}
+        {{Form::submit("Submit", ["class"=>"btn btn-gym"])}}
     {!! Form::close() !!}
 
 @endsection
