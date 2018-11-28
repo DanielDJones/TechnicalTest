@@ -2,15 +2,17 @@
 
 @section("content")
     <h1>Members</h1>
-    @if(count($members) > 1)
+    @if(count($members) > 0)
         @foreach($members as $member)
             <div class="card">
                 <h3>{{$member->surname}}</h3>
                 <p><a href="/members/{{$member->id}}">View Member</a></p>
             </div>
         @endforeach
+        <!-- Page cont -->
+        {{$members->links()}}
     @else
-        <p>No Posts found</p>
+        <p>No Member found</p>
         
     @endif
 

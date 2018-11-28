@@ -11,14 +11,24 @@
                 <a class="nav-link" href="/about">About</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Reports</a>
-                <div class="dropdown-menu" aria-labelledby="dropdown01">
+                    <a class="nav-link dropdown-toggle" href="/members" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Members</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                    <a class="dropdown-item" href="/members">View Members</a>
+                    <a class="dropdown-item" href="/members/create">Add Member</a>
+                    <a class="dropdown-item" href="#">Search</a>
+                  </div>
+                </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Reports</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown02">
                 <a class="dropdown-item" href="#">This Month</a>
                 <a class="dropdown-item" href="#">This Year</a>
                 <a class="dropdown-item" href="#">Search</a>
               </div>
             </li>
+
         </ul>
+        
         <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>

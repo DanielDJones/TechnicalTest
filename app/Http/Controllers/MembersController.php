@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+//Allows for members to be used in the file eg Members::all();
 use App\Members;
 
 class MembersController extends Controller
@@ -14,8 +15,9 @@ class MembersController extends Controller
      */
     public function index()
     {
-        $members = Members::all();
-        return view("members.index")->with("members", $members);
+        //get members by surname and break into pages
+        $members = Members::orderBy("surname", "asc")->paginate(10);
+        return view("members/index")->with("members", $members);
     }
 
     /**
@@ -25,7 +27,7 @@ class MembersController extends Controller
      */
     public function create()
     {
-        //
+        return view("members/create");
     }
 
     /**
@@ -36,7 +38,30 @@ class MembersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //validation
+        $this->validate($request, [
+            "forename" => "required",
+            "surname" => "required",
+            "email" => "required|email",
+            //nullable is required to prevent errors see https://laravel.com/docs/5.7/validation#validation-quickstart
+            "dateofbirth" => "nullable|date",
+            "phonenumber" => "nullable"
+        ]);
+
+        //Create member
+
+        //Enter into fields
+        $member = new Members;
+        $member->forename = $request->input("forename");
+        $member->surname = $request->input("surname");
+        $member->email = $request->input("email");
+        $member->dateofbirth = $request->input("dateofbirth");
+        $member->telnumber = $request->input("telnumber");
+        
+        //Store member
+        $member->save();
+
+        return redirect("/members")->with("success", "Member Created");
     }
 
     /**
@@ -49,6 +74,7 @@ class MembersController extends Controller
     {
         $member = Members::find($id);
         return view("members/show")->with("member", $member);
+
     }
 
     /**
