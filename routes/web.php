@@ -31,3 +31,10 @@ Route::get('/report/{year}/{month}', "PagesController@report/{year}/{month}");
 
 
 Route::resource("members", "MembersController");
+Route::resource("membership", "MembershipController");
+
+Route::get("/membership/{id}/create", "MembershipController@create");
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

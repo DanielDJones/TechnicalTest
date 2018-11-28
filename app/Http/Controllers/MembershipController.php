@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Members;
+use App\Membership;
 
 class MembershipController extends Controller
 {
@@ -21,9 +23,10 @@ class MembershipController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        //
+        $member = Members::where("member_id", $id)->first();
+        return view("membership/create")->with("member", $member);
     }
 
     /**
@@ -34,7 +37,27 @@ class MembershipController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //validation
+        $this->validate($request, [
+            "member_id" => "required",
+            "start_date" => "required|date",
+            "end_date" => "nullable|date",
+            //nullable is required to prevent errors see https://laravel.com/docs/5.7/validation#validation-quickstart
+        ]);
+
+        //Create member
+
+        //Enter into fields
+        $membership = new Membership;
+        $membership->member_id = $request->input("member_id");
+        $membership->start_date = $request->input("start_date");
+        $membership->end_date = $request->input("end_date");
+        
+        
+        //Store member
+        $membership->save();
+
+        return redirect("/members")->with("success", "Membership Created");
     }
 
     /**

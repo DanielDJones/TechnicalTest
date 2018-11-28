@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 //Allows for members to be used in the file eg Members::all();
 use App\Members;
+use App\Membership;
 
 class MembersController extends Controller
 {
@@ -73,8 +74,12 @@ class MembersController extends Controller
     public function show($id)
     {
         $member = Members::where("member_id", $id)->first();
-        return view("members/show")->with("member", $member);
-
+        $memberships = Membership::orderBy("start_date", "dec")->paginate(10);
+        
+        
+        //return view("members/show")->with("member", $member, "Memberships", $memberships);
+        //Pass the two sets of results to the view
+        return view("members/show", ["member"=> $member, "memberships"=> $memberships]);
     }
 
     /**
